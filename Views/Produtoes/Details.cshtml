@@ -1,0 +1,47 @@
+﻿@model CrudProdutosv4.Models.Produto
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<!--Details-->
+
+<h1>Detalhes do Produto</h1>
+<br />
+
+<div>
+    <h6> Nome do Produto: @Html.DisplayFor(model => model.NomeProduto)</h6>
+    <hr />
+    <h6> Quantidade de Produtos: @Html.DisplayFor(model => model.Quantidade) Unidades</h6>
+    <hr />
+    <h6> Preço do Produto: R$@Html.DisplayFor(model => model.Preco)</h6>
+    <hr />
+    <!--<dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeProduto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomeProduto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+    </dl>-->
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-primary">
+        <i class="fa-solid fa-pen-to-square" style="margin-right:8px;"></i>Editar
+    </a> |
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fa-solid fa-list-ul" style="margin-right:9px;"></i>Conferir lista de Produtos
+    </a>
+</div>

@@ -1,0 +1,58 @@
+﻿@model CrudProdutosv4.Models.Produto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Cadastrar Produto</h1>
+
+<h4>Produto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeProduto" class="control-label">Nome do Produto</label>
+                <input asp-for="NomeProduto" class="form-control" />
+                <span asp-validation-for="NomeProduto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantidade" class="control-label"></label>
+                <input asp-for="Quantidade" class="form-control" type="number" min="0" max="999" step="1" />
+                <span asp-validation-for="Quantidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Preco" class="control-label">Preço</label>
+                <input asp-for="Preco" class="form-control" type="number" min="1" max="50000" step="1" />
+                <span asp-validation-for="Preco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <!--<a href="" class="btn btn-primary mt-2">
+                    <i type="submit" class="fa-solid fa-cart-plus"></i><span class="ms-lg-2" >Salvar Produto</span>-->
+                    <!--<input type="submit" value="Salvar Produto" />-->
+                </a>
+            </div>
+            <div class="form-group">
+                <a class="btn btn-primary mt-2">
+                    <i class="fa-regular fa-bookmark"></i>
+                    <input type="submit" value="Salvar Produto" style="background:none; border:none; color:white;"/> 
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+        <a asp-action="Index" class="btn btn-secondary mt-2">
+        <i class="fa-solid fa-list-ul" style="margin-right:9px;"></i>Conferir lista de Produtos
+        </a>
+</div>
+
+<!--<div>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Conferir lista de Produtos</a>
+</div>-->
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

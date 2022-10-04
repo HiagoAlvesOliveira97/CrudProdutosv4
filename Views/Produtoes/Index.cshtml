@@ -1,0 +1,73 @@
+﻿@model IEnumerable<CrudProdutosv4.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista De Produtos Cadastrados</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary mt-3">
+        <i class="fa-solid fa-circle-plus" style="margin-right:9px;"></i>Criar Novo Produto
+    </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="border-left:1px solid #dee2e6;">
+                <h5 style="text-indent:-99999px;">@Html.DisplayNameFor(model => model.Id)</h5>
+                <h5>Código</h5>
+                
+            </th>
+            <th style="border-left:1px solid #dee2e6;">
+                <h5 style="text-indent:-99999px;">@Html.DisplayNameFor(model => model.NomeProduto) </h5>
+                <h5>Produtos</h5>
+            </th>
+            <th style="border-left:1px solid #dee2e6;">
+                <h5 >@Html.DisplayNameFor(model => model.Quantidade)</h5>
+            </th>
+            <th style="border-left:1px solid #dee2e6;">
+                <h5 style="text-indent:-99999px;">@Html.DisplayNameFor(model => model.Preco)</h5>
+                <h5>Preço</h5>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td style="border-left:1px solid #dee2e6;">
+                <p>
+                    @Html.DisplayFor(modelItem => item.Id) 
+                </p>
+            </td>
+                <td style="border-left:1px solid #dee2e6;">
+                <p>
+                    @Html.DisplayFor(modelItem => item.NomeProduto)
+                </p>
+            </td>
+                <td style="border-left:1px solid #dee2e6;">
+                <p>
+                   @Html.DisplayFor(modelItem => item.Quantidade)
+                </p>
+            </td>
+                <td style="border-left:1px solid #dee2e6;">
+                    <p>
+                        R$ @Html.DisplayFor(modelItem => item.Preco)
+                    </p>
+                </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary">
+                        <i class="fa-solid fa-pen-to-square" style="margin-right:9px;"></i>Editar
+                    </a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">
+                        <i class="fa-solid fa-circle-info" style="margin-right:9px;"></i>Detalhes
+                    </a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
+                        <i class="fa-solid fa-trash-can" style="margin-right:9px;"></i>Deletar
+                    </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cadastro de Produtos</h1>
+    <!--<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>-->
+    <a asp-controller="Produtoes" asp-action="Create" type="button" class="btn btn-primary mt-3">
+        <i class="fa-solid fa-circle-plus" style="margin-right:9px;"></i>Cadastrar Produto
+    </a>
+    <a asp-area="" asp-controller="Produtoes" type="button" class="btn btn-secondary mt-3">
+        <i class="fa-solid fa-list-ul" style="margin-right:9px;"></i>Conferir lista de Produtos
+    </a>
+</div>
